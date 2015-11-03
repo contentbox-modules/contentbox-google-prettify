@@ -87,7 +87,7 @@ component {
 		// Install the ckeditor plugin
 		var ckeditorPluginsPath = controller.getSetting("modules")["contentbox-admin"].path & "/includes/ckeditor/plugins/cbGooglePrettify";
 		var fileUtils = controller.getWireBox().getInstance("fileUtils@google-prettify");
-		var pluginPath = controller.getSetting("modules")["google-prettify"].path & "/includes/cbGooglePrettify";
+		var pluginPath = controller.getSetting("modules")["googlePrettify"].path & "/includes/cbGooglePrettify";
 		fileUtils.directoryCopy(source=pluginPath, destination=ckeditorPluginsPath);
 	}
 
