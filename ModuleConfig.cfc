@@ -10,7 +10,7 @@ Description :
 This modules allows you to insert code into your posts that will be prettifyed via
 Google Prettify.  In order for this to work, the layouts must implement the "cbui_beforeBodyEnd"
 
-http://google-code-prettify.googlecode.com/svn/trunk/README.html
+https://github.com/google/code-prettify/
 
 **/
 component {
@@ -85,7 +85,7 @@ component {
 	*/
 	function onActivate(){
 		// Install the ckeditor plugin
-		var ckeditorPluginsPath = controller.getSetting("modules")["contentbox-admin"].path & "/includes/ckeditor/plugins/cbGooglePrettify";
+		var ckeditorPluginsPath = controller.getSetting("modules")["contentbox-admin"].path & "/modules/ckeditor/plugins/cbGooglePrettify";
 		var fileUtils = controller.getWireBox().getInstance("fileUtils@google-prettify");
 		var pluginPath = controller.getSetting("modules")["google-prettify"].path & "/includes/cbGooglePrettify";
 		fileUtils.directoryCopy(source=pluginPath, destination=ckeditorPluginsPath);
@@ -102,7 +102,7 @@ component {
 	*/
 	function onDeactivate(){
 		// Uninstall the ckeditor plugin
-		var ckeditorPluginsPath = controller.getSetting("modules")["contentbox-admin"].path & "/includes/ckeditor/plugins/cbGooglePrettify";
+		var ckeditorPluginsPath = controller.getSetting("modules")["contentbox-admin"].path & "/modules/ckeditor/plugins/cbGooglePrettify";
 		var fileUtils = controller.getWireBox().getInstance("fileUtils@google-prettify");
 		fileUtils.directoryRemove(path=ckeditorPluginsPath, recurse=true);
 	}
