@@ -6,8 +6,8 @@ component{
 
 	function entry(event,rc,prc){
 		// view
-		event.setView(view="home/entry")
-			.setLayout(name="ajax", module="contentbox-admin");
+		event.setView( view="home/entry" )
+			.setLayout( name="ajax", module="contentbox-admin");
 	}
 
 }

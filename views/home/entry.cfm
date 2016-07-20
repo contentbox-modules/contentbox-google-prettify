@@ -25,8 +25,8 @@
 			<hr/>
 			<!--- Button Bar --->
 			<div id="bottomCenteredBar" class="textRight">
-				<button class="button2" onclick="embedCode()"> Embed Code </button>
-				<button class="buttonred" onclick="closeRemoteModal()"> Cancel </button>
+				<button class="btn btn-primary" onclick="embedCode()"> Embed Code </button>
+				<button class="btn btn-danger" onclick="closeRemoteModal()"> Cancel </button>
 			</div>
 		</div>
 	</div>

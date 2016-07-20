@@ -1,18 +1,3 @@
-/**
-********************************************************************************
-Copyright 2009 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
-www.coldboxframework.com | www.luismajano.com | www.ortussolutions.com
-********************************************************************************
-
-Author 	 :	Luis Majano
-Description :
-
-This modules allows you to insert code into your posts that will be prettifyed via
-Google Prettify.  In order for this to work, the layouts must implement the "cbui_beforeBodyEnd"
-
-https://github.com/google/code-prettify/
-
-**/
 component {
 
 	// Module Properties
@@ -20,17 +5,18 @@ component {
 	this.author 			= "Ortus Solutions, Corp";
 	this.webURL 			= "http://www.ortussolutions.com";
 	this.description 		= "Helps you embedd code into your pages and make them pretty";
-	this.version			= "1.0";
+	this.version			= "2.0.0";
 	// If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
 	this.viewParentLookup 	= true;
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
 	this.layoutParentLookup = true;
 	// Module Entry Point
-	this.entryPoint			= "google-prettify";
+	this.entryPoint			= "Google-Prettify";
+	this.alias 				= "Google-Prettify";
+	this.modelNamespace 	= "Google-Prettify";
 
 	function configure(){
 
-		// Compressor Settings
 		settings = {
 
 		};
@@ -38,18 +24,18 @@ component {
 		// SES Routes
 		routes = [
 			// Module Entry Point
-			{pattern="/", handler="home",action="index"},
+			{ pattern="/", handler="home",action="index" },
 			// Convention Route
-			{pattern="/:handler/:action?"}
+			{ pattern="/:handler/:action?" }
 		];
 
 		// Interceptors
 		interceptors = [
-			{class="#moduleMapping#.interceptors.Prettify", name="prettify@google-prettify"}
+			{ class="#moduleMapping#.interceptors.Prettify", name="prettify@google-prettify" }
 		];
 
 		// map utils
-		binder.map("fileUtils@google-prettify").to("coldbox.system.core.util.FileUtils");
+		binder.map( "fileUtils@google-prettify" ).to( "coldbox.system.core.util.FileUtils" );
 	}
 
 	/**
@@ -85,10 +71,10 @@ component {
 	*/
 	function onActivate(){
 		// Install the ckeditor plugin
-		var ckeditorPluginsPath = controller.getSetting("modules")["contentbox-admin"].path & "/modules/ckeditor/plugins/cbGooglePrettify";
-		var fileUtils = controller.getWireBox().getInstance("fileUtils@google-prettify");
-		var pluginPath = controller.getSetting("modules")["googlePrettify"].path & "/includes/cbGooglePrettify";
-		fileUtils.directoryCopy(source=pluginPath, destination=ckeditorPluginsPath);
+		var ckeditorPluginsPath = controller.getSetting( "modules" )[ "contentbox-admin" ].path & "/modules/contentbox-ckeditor/includes/ckeditor/plugins/cbGooglePrettify";
+		var fileUtils 			= wirebox.getInstance( "fileUtils@google-prettify" );
+		var pluginPath 			= modulePath & "/includes/cbGooglePrettify";
+		fileUtils.directoryCopy( source=pluginPath, destination=ckeditorPluginsPath );
 	}
 
 	/**
@@ -102,8 +88,8 @@ component {
 	*/
 	function onDeactivate(){
 		// Uninstall the ckeditor plugin
-		var ckeditorPluginsPath = controller.getSetting("modules")["contentbox-admin"].path & "/modules/ckeditor/plugins/cbGooglePrettify";
-		var fileUtils = controller.getWireBox().getInstance("fileUtils@google-prettify");
-		fileUtils.directoryRemove(path=ckeditorPluginsPath, recurse=true);
+		var ckeditorPluginsPath = controller.getSetting( "modules" )[ "contentbox-admin" ].path & "/modules/contentbox-ckeditor/includes/ckeditor/plugins/cbGooglePrettify";
+		var fileUtils = wirebox.getInstance( "fileUtils@google-prettify" );
+		fileUtils.directoryRemove( path=ckeditorPluginsPath, recurse=true );
 	}
 }

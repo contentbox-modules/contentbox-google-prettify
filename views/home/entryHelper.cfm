@@ -12,7 +12,7 @@ function embedCode(){
 	sendEditorText( text );
 }
 function sendEditorText(text){
-	$("###rc.editorName#").ckeditorGet().insertHtml( text );
+	insertEditorContent( '#rc.editorName#', text );
 	closeRemoteModal();
 }
 </script>

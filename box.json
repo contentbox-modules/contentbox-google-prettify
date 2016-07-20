@@ -1,0 +1,37 @@
+{
+    "name":"ContentBox Google Prettify",
+    "shortDescription":"TThis module allows you to add Akismet capabilities to your ContentBox CMS",
+    "location":"https://github.com/contentbox-modules/contentbox-google-prettify/archive/master.zip",
+    "version":"2.0.0",
+    "slug":"Google-Prettify",
+    "author":"Ortus Solutions <info@ortussolutions.com>",
+    "homepage":"https://github.com/contentbox-modules/contentbox-google-prettify",
+    "documentation":"https://github.com/contentbox-modules/contentbox-google-prettify",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/contentbox-modules/contentbox-google-prettify"
+    },
+    "bugs":"https://github.com/contentbox-modules/contentbox-google-prettify/issues",
+    "type":"contentbox-modules",
+    "license":[
+        {
+            "type":"Apache2",
+            "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    ],
+    "contributors":[
+        
+    ],
+    "dependencies":{
+    },
+    "devDependencies":{
+        
+    },
+    "installPaths":{
+    },
+    "ignore":[
+        "**/.*",
+        "tests",
+        "screenshots"
+    ]
+}
